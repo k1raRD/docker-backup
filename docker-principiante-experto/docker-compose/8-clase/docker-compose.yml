@@ -1,0 +1,6 @@
+services:
+    test:
+        container_name: test
+        image: restart-image
+        build: .
+        restart: always

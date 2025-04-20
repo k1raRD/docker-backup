@@ -1,0 +1,22 @@
+services:
+    drupal:
+        volumes:
+            - $PWD/drupal-html:/var/www/html
+        image: drupal
+        ports:
+            - 80:80
+        networks:
+            - net
+    postgres:
+        image: postgres
+        environment:
+            POSTGRES_PASSWORD: drupal
+        volumes:
+            - $PWD/data:/var/lib/postgresql/data
+        networks:
+            - net
+volumes:
+    drupal-html:
+networks:
+    net:
+

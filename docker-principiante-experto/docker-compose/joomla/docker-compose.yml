@@ -1,0 +1,12 @@
+services:
+  joomla:
+    image: joomla
+    ports:
+      - 8080:80
+    environment:
+      JOOMLA_DB_HOST: mysql
+      JOOMLA_DB_PASSWORD: 12345
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
